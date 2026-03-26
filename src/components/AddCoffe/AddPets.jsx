@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   PlusCircle,
   Dog,
@@ -10,8 +10,10 @@ import {
   Tag,
 } from "lucide-react";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router";
 
 const AddPets = () => {
+  const navigate = useNavigate()
   const handleAddPets = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -36,6 +38,7 @@ const AddPets = () => {
             draggable: true,
           });
         }
+        navigate("/")
       });
   };
 
